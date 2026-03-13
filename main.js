@@ -178,8 +178,8 @@ function setupCard() {
       if (!paper) return;
       const body = letterText;
       const contentHeight = body.scrollHeight;
-      const base = 160;
-      const max = 520;
+      const base = 520;
+      const max = 1000;
       const padded = Math.min(Math.max(contentHeight + 40, base), max);
       paper.style.setProperty("--letter-height", `${padded}px`);
     });
@@ -188,33 +188,14 @@ function setupCard() {
   const toggleOpen = () => {
     const isOpen = cardShell?.classList.toggle("open");
     if (isOpen) {
-      // let CSS drive the open transform
       if (cardOuter) cardOuter.style.transform = "";
     } else if (cardOuter) {
-      cardOuter.style.transform = "rotateX(6deg) rotateY(-8deg)";
+      cardOuter.style.transform = "";      
     }
   };
 
   cardOuter?.addEventListener("click", toggleOpen);
   hintBtn?.addEventListener("click", toggleOpen);
-
-  // Subtle parallax on mouse move
-  cardOuter?.addEventListener("pointermove", (e) => {
-    const rect = cardOuter.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    const rotY = -8 + x * 10;
-    const rotX = 6 - y * 6;
-    if (!cardShell?.classList.contains("open")) {
-      cardOuter.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-    }
-  });
-
-  cardOuter?.addEventListener("pointerleave", () => {
-    if (!cardShell?.classList.contains("open")) {
-      cardOuter.style.transform = "rotateX(6deg) rotateY(-8deg)";
-    }
-  });
 
   updateLetter(current);
 }
