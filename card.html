@@ -12,27 +12,22 @@
 
     <section class="card3d" id="cardShell" aria-label="Thiệp 3D">
       <div class="card-outer" id="cardOuter">
-        <div class="card-front">
-          <div class="front-design">
-            <span class="tag">For you</span>
-            <h2>Open me</h2>
-            <p>Chạm để mở thiệp</p>
-            <div class="shine"></div>
-          </div>
-        </div>
-        <div class="card-inner">
+        <div class="envelope">
+          <div class="envelope-body"></div>
+          <div class="envelope-flap"></div>
+          <div class="wax-seal">Gửi</div>
           <div class="letter">
             <p class="label">Lời chúc</p>
             <p id="letterText"></p>
             <div class="confetti"></div>
           </div>
         </div>
-        <div class="spine"></div>
       </div>
-      <button class="open-hint" id="hintBtn">Chạm vào thiệp để mở</button>
+      <button class="open-hint" id="hintBtn">Chạm vào phong thư để mở</button>
     </section>
   </main>
 
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
   <script src="main.js" type="module"></script>
 </body>
 </html>
