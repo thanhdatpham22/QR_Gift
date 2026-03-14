@@ -178,8 +178,8 @@ function setupCard() {
       if (!paper) return;
       const body = letterText;
       const contentHeight = body.scrollHeight;
-      const base = 520;
-      const max = 1000;
+      const base = 360;
+      const max = 360;
       const padded = Math.min(Math.max(contentHeight + 40, base), max);
       paper.style.setProperty("--letter-height", `${padded}px`);
     });

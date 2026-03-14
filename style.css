@@ -451,9 +451,9 @@ button.ghost { background: rgba(255, 255, 255, 0.05); }
 
 @media (max-width: 860px) {
   .qr-panel { grid-template-columns: 1fr; justify-items: center; }
-  .qr-frame { width: min(320px, 82vw); }
+  .qr-frame { width: min(280px, 62vw); }
   .link-pill { width: 100%; }
-  .card3d { height: 520px; width: 96vw; }
+  .card3d { height: 420px; width: 50vw; }
 }
 
 @media (max-width: 720px) {
@@ -461,8 +461,8 @@ button.ghost { background: rgba(255, 255, 255, 0.05); }
   .scene.card-scene { width: 100%; padding: 28px 14px 40px; }
   .card3d {
     width: 100%;
-    max-width: 520px;
-    height: clamp(440px, 78vh, 640px);
+    max-width: 420px;
+    height: clamp(220px, 52vh, 320px);
     margin-inline: auto;
   }
   /* Giữ phong thư đứng yên, tránh cảm giác lệch trên mobile */
