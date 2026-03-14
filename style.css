@@ -259,6 +259,8 @@ button.ghost { background: rgba(255, 255, 255, 0.05); }
   gap: 14px;
   cursor: pointer;
   margin: 0 auto;
+  justify-self: center;
+  align-self: center;
 }
 
 .card-outer {
@@ -454,8 +456,24 @@ button.ghost { background: rgba(255, 255, 255, 0.05); }
   .card3d { height: 520px; width: 96vw; }
 }
 
+@media (max-width: 720px) {
+  body { padding-inline: max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right)); }
+  .scene.card-scene { width: 100%; padding: 28px 14px 40px; }
+  .card3d {
+    width: 100%;
+    max-width: 520px;
+    height: clamp(440px, 78vh, 640px);
+    margin-inline: auto;
+  }
+  /* Giữ phong thư đứng yên, tránh cảm giác lệch trên mobile */
+  .card3d:not(.open) #cardOuter { animation: none; transform: none; }
+}
+
 @media (max-width: 560px) {
-  body { padding: 18px 0; }
+  body {
+    padding: 18px 0;
+    padding-inline: max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right));
+  }
   .card { padding: 28px; }
   .controls { flex-direction: column; }
   button { width: 100%; text-align: center; }
